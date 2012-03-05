@@ -65,6 +65,8 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Timeline</li>
+              <div id="timeline">
+              </div>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
@@ -72,6 +74,8 @@
            <div class="hero-unit">
             <h2>Intermediate Java / Web Developer</h2>
             <p>Confirmed Clean Coder, Optimistic Toolmaker, e-mail novelist, Chameleon Facilitator, Functionnal language Explorer and Guitariste of lost hours.</p>
+            <div id="skills">
+            </div>
           </div>
           <div class="row-fluid">
             <div id="experience" class="span9">
@@ -118,6 +122,24 @@
             </div><!--/span-->
           </div><!--/row-->
           <div class="row-fluid">
+            <div id="recommendation" class="span9">
+              <h2>Recommendation</h2>
+              <p>
+              “Aurélien is a very good Java and Web developper. He’s passionate about OpenSource and I learned a lot about Linux tools or tricks thanks to him. He is eager to always learn and try new languages (like Scala) or Agile practices to enhance our workflow. 
+              He is also a great coworker, a wonderful teamplayer and have high communication skills ! 
+              I’m enjoying a lot working with him, and I hope it will last.” <b><i>8 octobre 2011</i></b>
+              </p>
+              <h4><i><a href="http://www.linkedin.com/profile/view?id=3843964&noCreateProposal=true&goback=%2Enpe_*1_*1_*1_*1_*1_*1%2Enpe_*1_fr*4FR_*1_*1_*1_*1%2Enpe_*1_en*4US_*1_*1_*1_*1">Gregory Paul</a>, Java & Web engineer, Vidal</i></h4>
+              <h5>Has worked with me at VIDAL</h5>
+              <br />
+              <p>
+              “I met Aurélien while I was a consultant for Safig Dataway, delivering a project on a very short timeframe, using technologies that were very effective but unknown to the company at that time. Aurélien, who was a Safig employee, picked up the pace very quickly and was able to embrace the project very effectively. Indeed, he has since gained competence as a software developer and we often cross paths in local Java User Groups. I would definitely recommend working with Aurélien if you ever get the opportunity.” <b><i>11 octobre 2011</i></b>
+              </p>
+              <h4><i><a href="http://www.linkedin.com/profile/view?id=2952029&noCreateProposal=true&goback=%2Enpe_*1_*1_*1_*1_*1_*1%2Enpe_*1_fr*4FR_*1_*1_*1_*1%2Enpe_*1_en*4US_*1_*1_*1_*1">Eric Bottard</a>, Software Architect, eBusiness Information</i></h4>
+              <h5>Has been advisor for Safig Dataway</h5>
+            </div>
+          </div>
+          <div class="row-fluid">
             <div id="experience" class="span9">
               <h2>Portfolio</h2>
               <section class="coderwall" data-coderwall-username="athieriot" data-coderwall-orientation="horizontal"></section>
@@ -139,10 +161,87 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="./assets/js/jquery.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/raphael.min.js"></script>
     <script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
     <script>
        $(document).ready(function(){
-          $('#spybar').scrollspy()
+          $('#spybar').scrollspy();
+
+          skillsChart = new Highcharts.Chart({
+             chart: {
+                renderTo: 'skills',
+                type: 'bar',
+                spacingTop: 2,
+                backgroundColor: '#F5F5F5',
+             },
+             title: {text: ''},
+             subtitle: {text: ''},
+             xAxis: {
+                min: 0,
+                reversed: true,
+                title: {text: 'Skills'},
+                labels: {enabled: false}
+             },
+             yAxis: {
+                min: 0,
+                title: {
+                   text: 'Level',
+                   align: 'high'
+                },
+                labels: {enabled: false}
+             },
+             tooltip: {
+                formatter: function() {
+                   switch(this.y){ 
+                      case 1: 
+                        return this.series.name + ' : Not so good'; 
+                      case 2: 
+                        return this.series.name + ' : Not bad'; 
+                      case 3: 
+                        return this.series.name + ' : Pretty good'; 
+                      case 4: 
+                        return this.series.name + ' : Experienced'; 
+                      case 5: 
+                        return this.series.name + ' : Whoot'; 
+                      case 6: 
+                        return this.series.name + ' : Nerd'; 
+                      break; 
+                   }
+                }
+             },
+             plotOptions: {
+                bar: {
+                   dataLabels: {
+                      enabled: true,
+                      formatter: function() {return this.series.name;}
+                   }
+                }
+             },
+             legend: {enabled: false},
+             credits: {enabled: false},
+             series: [
+                {name: 'TDD',          data: [2]}, 
+                {name: 'Javascript',   data: [3]}, 
+                {name: 'SCRUM',        data: [3]}, 
+                {name: 'TeamCity',     data: [4]}, 
+                {name: 'Maven',        data: [4]}, 
+                {name: 'Linux',        data: [6]}, 
+                {name: 'Git',          data: [5]}, 
+                {name: 'Java',         data: [4]},
+                {name: 'Spring',       data: [3]}, 
+                {name: 'Hibernate',    data: [3]}, 
+                {name: 'Scala',        data: [2]}, 
+             ],
+             exporting: {
+                buttons: {
+                   exportButton: {enabled: false},
+                   printButton: {enabled: false}
+                }
+             }
+          });
+
        });
     </script>
   </body>
