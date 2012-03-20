@@ -47,6 +47,7 @@
           <a class="brand" href="#">Aurélien Thieriot</a>
           <div class="nav-collapse">
             <ul id="spybar" class="nav">
+              <li><a href="#about">About</a></li>
               <li><a href="#experience">Experience</a></li>
               <li><a href="#education">Education</a></li>
               <li><a href="#certification">Certification</a></li>
@@ -70,7 +71,11 @@
                    33 Avenue Laplace <br>
                    94110 Arcueil, France <br>
                    <i class="icon-signal"></i> +033618941838 <br>
-                   <i class="icon-envelope"></i> a.thieriot@gmail.com <br>
+                   <i class="icon-envelope"></i>  <a href="mailto:a.thieriot@gmail.com">a.thieriot@gmail.com</a> <br>
+                   <br>
+                   <img src="./assets/img/twitter-fav.ico"/> <a href="https://twitter.com/#!/a_thieriot">@a_thieriot</a> <br>
+                   <img src="./assets/img/github-fav.ico"/> <a href="https://github.com/athieriot">github/athieriot</a> <br>
+                   <img src="./assets/img/linkedin-fav.ico"/> <a href="http://www.linkedin.com/profile/view?locale=en_US&id=36484197&trk=tab_pro">linkedIn/athieriot</a> <br>
                 </address>
               </li>
               <li class="nav-header">Skills</li>
@@ -83,7 +88,7 @@
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
-           <div class="hero-unit well">
+           <div id="about" class="hero-unit well">
             <h2>Intermediate Java / Web Developer</h2>
             <p><h4><i>Confirmed Clean Coder, Optimistic Toolmaker, e-mail novelist, Chameleon Facilitator, Functional languages Explorer and enthusiastic guitar player.</i></h4></p>
             <p><strong>Objective:</strong> to learn a lot, to share my knowledge, to lead projects and achieve their goals.
@@ -166,7 +171,7 @@
 
                 <p>
                    <ul>
-                      <li>Contributing in Open source projects (Infinitest, Hubot, Rsstodolist)</li>
+                      <li>Contributing in Open source projects</li>
                       <li>Going to several User Groups (in Paris)</li>
                       <li>Going to international conferences (Devoxx, JSConf)</li>
                       <li>Helping to organise events like ParisJS</li>
@@ -281,10 +286,29 @@
             <div id="experience" class="span9">
               <h2>Portfolio</h2>
 
-              <p>
-              </p>
-                
-
+              <dl>
+                 <dt><i class="icon-star"></i> Yammer adapter for Hubot: <a href="https://github.com/athieriot/hubot-yammer">https://github.com/athieriot/hubot-yammer</a></dt>
+                 <dd>
+                   <a href="https://www.yammer.com">Yammer</a> is a social network for companies.<br>
+                   <a href="http://hubot.github.com/">Hubot</a> is a customizable, kegerator-powered life embetterment robot written in Coffescript on Node.js.<br>
+                   I made an adapter that allows Yammer users to talk to Hubot. 
+                 </dd><br>
+                 <dt><i class="icon-star"></i> Rsstodolist Firefox Addon: <a href="https://addons.mozilla.org/fr/firefox/addon/rss-todolist-addon"> https://addons.mozilla.org/fr/firefox/addon/rss-todolist-addon</a> </dt>
+                 <dt><i class="icon-star"></i> Rsstodolist Hubot script: <a href="https://github.com/github/hubot-scripts/blob/master/src/scripts/rsstodolist.coffee">https://github.com/github/hubot-scripts/blob/master/src/scripts/rsstodolist.coffee</a></dt>
+                 <dd>These addons are interfaces for the <a href="http://rsstodolist.appspot.com">Rsstodolist</a> application.<br>
+                 It allows you, by a single click, to add the URL of the webpage you're viewing to an RSS feed.
+                 Typical example is marking web pages to read later.
+                 Also, if you know the feed name of a friend of yours, you may also "push" links to it's RSS feed. That's another cool use case.</dd><br>
+                 <dt><i class="icon-star"></i> Taliesin: <a href="https://github.com/athieriot/taliesin">https://github.com/athieriot/taliesin</a></dt>
+                 <dd>
+                   Taliesin is a simple command line tool to help launching builds on Continuous Integration systems.<br>
+                 </dd><br>
+                 <dt><i class="icon-heart"></i> Contribution on the Infinitest project: <a href="https://github.com/infinitest/infinitest">https://github.com/infinitest/infinitest</a></dt>
+                 <dd>
+                   Infinitest is a Continuous Test Runner for Java.<br>
+                   I made some fixes for the IntelliJ plugin.  
+                 </dd><br>
+              </dl>
               <section class="coderwall" data-coderwall-username="athieriot" data-coderwall-orientation="horizontal"></section>
             </div>
           </div>
@@ -294,7 +318,9 @@
       <hr>
 
       <footer>
-        <p>&copy; Aurélien Thieriot 2012</p>
+        <p>&copy; Aurélien Thieriot 2012
+          <span class="pull-right">Version 1.0</span>
+        </p>
       </footer>
 
     </div><!--/.fluid-container-->
@@ -305,9 +331,8 @@
     <script src="./assets/js/jquery.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/raphael.min.js"></script>
+    <script src="./assets/js/highcharts.js"></script>
     <script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
-    <script src="http://code.highcharts.com/highcharts.js"></script>
-    <script src="http://code.highcharts.com/modules/exporting.js"></script>
     <script>
        $(document).ready(function(){
           $('#spybar').scrollspy();
