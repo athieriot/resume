@@ -324,7 +324,7 @@
 
       <footer>
         <p>&copy; Aurélien Thieriot 2012
-          <span class="pull-right">Version 1.0</span>
+          <span class="pull-right">Version 1.1</span>
         </p>
       </footer>
 
@@ -434,10 +434,25 @@
                 labels: {enabled: false}
              },
              yAxis: {
-                gridLineWidth: 0,
-                min: 0,
+                gridLineWidth: 1,
+                gridLineDashStyle: 'dash',
+                showLastLabel: false,
+                //showFirstLabel: false,
+                min: -2,
                 title: {text: ''},
-                labels: {enabled: false}
+                labels: {
+                   enabled: true,
+                   x: 300,
+                   y: -3,
+                   style: {
+                      color: '#6D869F',
+                      fontWeight: 'bold'
+                   },
+                   formatter: function() {
+                      if (this.value === -2) return 'School'
+                      else return this.value + ' years'
+                   }
+                }
              },
              legend: {enabled: false},
              credits: {enabled: false},
@@ -477,7 +492,8 @@
                 data: [0.5]
                 }, {
                 name: 'IUT Reims',
-                data: [2]
+                data: [-2],
+                color: '#EAEA86',
              }],
              exporting: {
                 buttons: {
