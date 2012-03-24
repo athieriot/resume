@@ -64,7 +64,9 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header"><i class="icon-user"></i></li>
+            <a href="#" class="thumbnail pull-right" style="margin-right: 10px; width:50px; height: 50px">
+               <img src="http://www.gravatar.com/avatar/0d40e29bf1ef6d51c9b8e6e7a0edd9f5.png" alt="">
+            </a>
               <li>
                 <address>
                    <strong>Aurélien Thieriot</strong> <br>
@@ -377,11 +379,11 @@
                       case 3: 
                         return this.series.name + ' : Intermediate'; 
                       case 4: 
-                        return this.series.name + ' : Experienced'; 
+                        return this.series.name + ' : Good knowledge'; 
                       case 5: 
-                        return this.series.name + ' : Whoot'; 
+                        return this.series.name + ' : Experienced'; 
                       case 6: 
-                        return this.series.name + ' : Nerd'; 
+                        return this.series.name + ' : Used to'; 
                       break; 
                    }
                 }
@@ -402,16 +404,16 @@
              credits: {enabled: false},
              series: [
                 {name: 'TDD',          data: [2]}, 
-                {name: 'Javascript',   data: [3]}, 
                 {name: 'SCRUM',        data: [3]}, 
-                {name: 'TeamCity',     data: [4]}, 
-                {name: 'Maven',        data: [4]}, 
-                {name: 'Linux',        data: [6]}, 
-                {name: 'Git',          data: [5]}, 
-                {name: 'Java',         data: [4]},
-                {name: 'Spring',       data: [3]}, 
-                {name: 'Hibernate',    data: [3]}, 
                 {name: 'Scala',        data: [3]}, 
+                {name: 'Javascript',   data: [4]}, 
+                {name: 'Hibernate',    data: [4]}, 
+                {name: 'Spring',       data: [5]}, 
+                {name: 'Java',         data: [6]},
+                {name: 'Git',          data: [5]}, 
+                {name: 'Maven',        data: [5]}, 
+                {name: 'TeamCity',     data: [4]}, 
+                {name: 'Linux',        data: [4]}, 
                 {name: 'SQL',        data: [2]}, 
              ],
              exporting: {
